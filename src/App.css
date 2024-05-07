@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.scrollToTop {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  border-radius: 10px;
+  right: 50px;
+  bottom: 50px;
+  padding: 10px;
+  background: rgba(240, 248, 255, 0.3);
+  color: rgb(2, 2, 54);
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.9;
+}
+
+.scrollToTop:hover {
+  background: rgba(240, 248, 255, 0.6);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
