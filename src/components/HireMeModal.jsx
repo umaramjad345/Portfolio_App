@@ -2,12 +2,7 @@ import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
 import { FloatingLabel, Select, Textarea } from "flowbite-react";
 
-const selectOptions = [
-  "Web Application",
-  "Mobile Application",
-  "UI/UX Design",
-  "Branding",
-];
+const selectOptions = ["Web Application", "Mobile Application", "UI/UX Design"];
 
 const HireMeModal = ({ onClose, onRequest }) => {
   return (
