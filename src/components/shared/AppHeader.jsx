@@ -159,7 +159,7 @@ const AppHeader = () => {
               onClick={showHireMeModal}
               className="text-lg text-ternary-light w-24 p-2 py-2 transition-all duration-500 rounded-lg bg-indigo-500 hover:bg-indigo-600"
             >
-              Send Message
+              Hire Me
             </button>
           </div>
 
