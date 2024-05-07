@@ -35,50 +35,45 @@ const HireMeModal = ({ onClose, onRequest }) => {
                 <FiX className="text-3xl" />
               </button>
             </div>
-            <div className="modal-body p-5 w-full h-full">
+            <div className="p-5 w-full h-full">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
                 }}
-                className="max-w-xl m-4 text-left"
+                className="max-w-xl m-4 text-left flex flex-col gap-4"
               >
-                <div className="flex flex-col gap-4">
-                  <FloatingLabel variant="filled" label="Name" type="text" />
-                  <FloatingLabel variant="filled" label="Email" type="email" />
+                <FloatingLabel variant="filled" label="Name" type="text" />
+                <FloatingLabel variant="filled" label="Email" type="email" />
 
-                  <Select name="subject" required aria-label="Project Category">
-                    {selectOptions.map((option) => (
-                      <option className="text-normal sm:text-md" key={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </Select>
-                  <Textarea
-                    className="rounded-bl-none rounded-br-none"
-                    variant="filled"
-                    cols="14"
-                    rows="6"
-                    placeholder="Write Your Message Here"
-                    aria-label="Message"
-                  ></Textarea>
-                </div>
-
-                <div className="mt-6 pb-4 sm:pb-1">
-                  <button
-                    type="submit"
-                    onClick={onClose}
-                    className="text-lg text-nowrap text-indigo-700 dark:text-slate-100 hover:text-slate-100 w-1/2 p-2 py-2 border-2 border-indigo-600 transition-all duration-500 hover:bg-indigo-600 rounded-lg"
-                  >
-                    Send Message
-                  </button>
-                </div>
+                <Select name="subject" required aria-label="Project Category">
+                  {selectOptions.map((option) => (
+                    <option className="text-normal sm:text-md" key={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Select>
+                <Textarea
+                  className="rounded-bl-none rounded-br-none"
+                  variant="filled"
+                  cols="14"
+                  rows="6"
+                  placeholder="Write Your Message Here"
+                  aria-label="Message"
+                ></Textarea>
+                <button
+                  type="submit"
+                  onClick={onClose}
+                  className="text-lg text-nowrap text-indigo-700 dark:text-slate-100 hover:text-slate-100 w-1/2 p-2 py-2 border-2 border-indigo-600 transition-all duration-500 hover:bg-indigo-600 rounded-lg"
+                >
+                  Send Message
+                </button>
               </form>
             </div>
-            <div className="modal-footer mt-1 sm:mt-0 py-2 px-8 border0-t text-right">
+            <div className="max-w-xl w-full text-right">
               <button
                 type="submit"
                 onClick={onClose}
-                className="text-lg text-slate-100 w-1/4 p-2 py-2 rounded-lg bg-indigo-600"
+                className="text-lg text-slate-100 mx-8 w-1/4 px-2 py-2 rounded-lg bg-indigo-600"
               >
                 Close
               </button>
