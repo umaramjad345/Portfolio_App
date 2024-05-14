@@ -29,14 +29,14 @@ export const projectsData = [
     id: 4,
     title: "Real Estate App",
     category: "Web Application",
-    img: "/Project-4.png",
-    sourceCode: "https://github.com/umaramjad345/MERN_Blog_App",
+    img: "/Project-5.png",
+    sourceCode: "https://github.com/umaramjad345/MERN_Real_Estate_App",
   },
   {
     id: 5,
     title: "Job Finding App",
     category: "Web Application",
-    img: "/Project-5.png",
+    img: "/Project-6.png",
     sourceCode: "https://github.com/umaramjad345/MERN_Blog_App",
   },
 ];
