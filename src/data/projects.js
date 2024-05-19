@@ -37,6 +37,6 @@ export const projectsData = [
     title: "Job Finding App",
     category: "Web Application",
     img: "/Project-6.png",
-    sourceCode: "https://github.com/umaramjad345/MERN_Blog_App",
+    sourceCode: "https://github.com/umaramjad345/MERN_Job_App",
   },
 ];
