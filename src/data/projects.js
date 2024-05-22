@@ -5,11 +5,6 @@ export const projectsData = [
     category: "Web Application",
     img: "/Project-1.png",
     sourceCode: "https://github.com/umaramjad345/MERN_TEAMWISE_App",
-    ProjectHeader: {
-      title: "Project Management UI - From Context",
-      publishDate: "Jul 26, 2021",
-      tags: "UI / Frontend",
-    },
   },
   {
     id: 2,
