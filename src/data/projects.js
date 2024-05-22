@@ -39,4 +39,11 @@ export const projectsData = [
     img: "/Project-6.png",
     sourceCode: "https://github.com/umaramjad345/MERN_Job_App",
   },
+  {
+    id: 6,
+    title: "Next.JS Feedback App",
+    category: "Web Application",
+    img: "/Project-7.png",
+    sourceCode: "https://github.com/umaramjad345/next.js_feedback_app",
+  },
 ];
