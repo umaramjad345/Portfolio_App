@@ -2,17 +2,17 @@ export const aboutMeData = [
   {
     id: 1,
     point:
-      "I'm a Self-Taught Programmer in Full Stack Web Development and Competitive Programming with strong skills in Project Management, Critical and Strategic Thinking, and meticulousness.",
+      "As a Self-Taught Programmer and Full Stack Web Developer, I thrive on the dynamic intersection of technology and creativity.",
   },
   {
     id: 2,
     point:
-      "Creative Problem-Solving and Results-Driven enthusiast with a constantly growing love for a better UI/UX.",
+      "My expertise spans from Project Management to Critical and Strategic Thinking.",
   },
   {
     id: 3,
     point:
-      "Passionate about crafting immersive digital experiences and building innovative solutions that drive user engagement and business growth.",
+      "With relentless focus on Problem-Solving and Results-Driven execution, and constantly growing love for a better UI/UX.",
   },
   {
     id: 4,
@@ -22,16 +22,16 @@ export const aboutMeData = [
   {
     id: 5,
     point:
-      "A keen learner who has strong fundamentals in Data Structures and Algorithms.",
+      "From designing intuitive user interfaces with HTML, CSS, JavaScript and React.js to architecting scalable backend systems with Node.js, Express, and MongoDB, I bring a holistic approach to every project I undertake.",
   },
   {
     id: 6,
     point:
-      "From designing intuitive user interfaces with HTML, CSS, and JavaScript to architecting scalable backend systems with Node.js, Express, and MongoDB, I bring a holistic approach to every project I undertake.",
+      "Currently, I am delving into the depths of React.js Frameworks particularly exploring the possibilities offered by Next.JS.",
   },
   {
     id: 7,
     point:
-      "Proficient in the most advanced and robust Web Development Framework i,e, React.JS & Next.JS.",
+      "I am very passionate about crafting innovative solutions that not only meet but exceed expectations. I would like the opportunity to bring my expertise to your next project. Let us collaborate to innovate something truly valuable.",
   },
 ];
