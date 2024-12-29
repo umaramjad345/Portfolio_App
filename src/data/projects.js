@@ -8,7 +8,7 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Blogging App",
+    title: "Blog App",
     category: "Web Application",
     img: "/Project-2.png",
     sourceCode: "https://github.com/umaramjad345/MERN_Blog_App",
