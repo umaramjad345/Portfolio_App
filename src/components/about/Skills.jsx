@@ -1,42 +1,41 @@
+// Skills.jsx
 import React from "react";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
-import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
-  DiPython,
-  DiGit,
-} from "react-icons/di";
-import { SiFirebase, SiNextdotjs } from "react-icons/si";
+import { Space, Image } from "antd";
+import wordpress from "../../assets/wordpress.svg";
+import shopify from "../../assets/shopify.svg";
+import htmlIcon from "../../assets/html-icon.svg";
+import cssIcon from "../../assets/css-icon.svg";
+import jsIcon from "../../assets/js-icon.svg";
+import nodeIcon from "../../assets/node-icon.svg";
+import reactIcon from "../../assets/react-icon.svg";
+import typescriptIcon from "../../assets/typescript-icon.svg";
+import vueIcon from "../../assets/vue-icon.svg";
+import boostrapIcon from "../../assets/bootstrap-icon.svg";
 
 const skillIcons = [
-  { icon: <FaHtml5 /> },
-  { icon: <FaCss3Alt /> },
-  { icon: <DiJavascript1 /> },
-  { icon: <DiReact /> },
-  { icon: <SiNextdotjs /> },
-  { icon: <DiNodejs /> },
-  { icon: <DiMongodb /> },
-  { icon: <DiPython /> },
-  { icon: <DiGit /> },
-  { icon: <SiFirebase /> },
+  wordpress,
+  shopify,
+  reactIcon,
+  typescriptIcon,
+  vueIcon,
+  nodeIcon,
+  htmlIcon,
+  cssIcon,
+  boostrapIcon,
+  jsIcon,
 ];
 
 const Skills = () => {
   return (
-    <>
-      <h2 className="text-5xl my-8 p-2 w-fit mx-auto text-ternary-dark dark:text-ternary-light">
-        Skills
-      </h2>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {skillIcons.map((skill) => (
-          <div className="w-48 h-40 flex items-center justify-center text-6xl text-ternary-dark dark:text-ternary-light rounded-xl border-2 border-ternary-dark dark:border-ternary-light transition-all duration-300 hover:scale-105">
-            {skill.icon}
-          </div>
-        ))}
-      </div>
-    </>
+    <Space size={16} wrap>
+      {skillIcons.map((icon, index) => (
+        <Image
+          width={50}
+          src={icon}
+          alt={icon.split("/").pop()?.split(".")[0]}
+        />
+      ))}
+    </Space>
   );
 };
 

@@ -1,36 +1,156 @@
-import { FloatingLabel, Textarea } from "flowbite-react";
+import { useEffect, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import { Button, Form, Input, Space, Typography, Row, Col, Image } from "antd";
+import { useSnackbar } from "notistack";
+import ReCAPTCHA from "react-google-recaptcha";
+import validator from "validator";
 
 const ContactForm = () => {
-  return (
-    <div className="w-full lg:w-1/2">
-      <div className="leading-loose">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
+  const [state, handleSubmit] = useForm("xknkpqry");
+  const [validEmail, setValidEmail] = useState(false);
+  const [isHuman, setIsHuman] = useState(false);
+  const [message, setMessage] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
+
+  function verifyEmail(email) {
+    if (validator.isEmail(email)) {
+      setValidEmail(true);
+    } else {
+      setValidEmail(false);
+    }
+  }
+
+  useEffect(() => {
+    if (state.succeeded) {
+      enqueueSnackbar("Email successfully sent!", {
+        variant: "success",
+        anchorOrigin: {
+          vertical: "bottom",
+          horizontal: "left",
+        },
+      });
+    } else if (state.errors && state.errors.length > 0) {
+      enqueueSnackbar("Something went wrong. Please try again.", {
+        variant: "error",
+        anchorOrigin: {
+          vertical: "bottom",
+          horizontal: "left",
+        },
+      });
+    }
+  }, [state.succeeded, state.errors, enqueueSnackbar]);
+
+  if (state.succeeded) {
+    return (
+      <div style={{ marginTop: "10rem", textAlign: "center" }}>
+        <Typography.Title level={3}>
+          Thanks for getting in touch!
+        </Typography.Title>
+        <Button
+          type="primary"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
         >
-          <p className="font-general-medium text-primary-dark dark:text-primary-light text-3xl w-fit mx-auto mb-8">
-            Contact Form
-          </p>
-          <div className="flex flex-col gap-4">
-            <FloatingLabel variant="filled" label="Name" type="text" />
-            <FloatingLabel variant="filled" label="Email" type="email" />
-            <FloatingLabel variant="filled" label="Subject" type="text" />
-            <Textarea
-              className="rounded-bl-none rounded-br-none"
-              variant="filled"
-              cols="14"
-              rows="6"
-              placeholder="Write Your Message Here"
-              aria-label="Message"
-            ></Textarea>
-            <button className="text-xl text-indigo-700 dark:text-slate-100 hover:text-slate-100 w-full p-2 py-3 border-2 border-indigo-600 transition-all duration-500 hover:bg-indigo-600 rounded-lg">
-              Send Message
-            </button>
-          </div>
-        </form>
+          Back to the top
+        </Button>
       </div>
+    );
+  }
+
+  return (
+    <div className="mt-10 w-full flex flex-col justify-center items-center px-4">
+      <Typography.Title
+        level={2}
+        style={{
+          textAlign: "center",
+          color: "var(--text-color)",
+          width: "100%",
+        }}
+      >
+        Get in touch
+      </Typography.Title>
+
+      <Form onFinish={handleSubmit} layout="vertical" style={{ width: "100%" }}>
+        <Form.Item
+          label="Email"
+          name="email"
+          required
+          rules={[{ required: true, message: "Please input your email!" }]}
+          labelCol={{ span: 24 }}
+          className="custom-form-item"
+        >
+          <div>
+            <Input
+              placeholder="e.g., example@example.com"
+              type="email"
+              onChange={(e) => verifyEmail(e.target.value)}
+              style={{
+                backgroundColor: "var(--bg-color)",
+                color: "var(--text-color)",
+                width: "100%",
+              }}
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
+          </div>
+        </Form.Item>
+
+        <Form.Item
+          label="Message"
+          name="message"
+          required
+          rules={[{ required: true, message: "Please input your message!" }]}
+          labelCol={{ span: 24 }}
+          className="custom-form-item"
+        >
+          <div>
+            <Input.TextArea
+              rows={6}
+              placeholder="e.g., Send a message to get started."
+              onChange={(e) => setMessage(e.target.value)}
+              style={{
+                backgroundColor: "var(--bg-color)",
+                color: "var(--text-color)",
+                width: "100%",
+              }}
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
+          </div>
+        </Form.Item>
+
+        <Form.Item
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <ReCAPTCHA
+            sitekey="6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg"
+            onChange={() => setIsHuman(true)}
+          />
+        </Form.Item>
+
+        <Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            // disabled={state.submitting || !validEmail || !message || !isHuman}
+            block
+            style={{ width: "100%" }}
+          >
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
     </div>
   );
 };
