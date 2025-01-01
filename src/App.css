@@ -129,3 +129,12 @@ body {
     display: inline-block;
   }
 }
+
+.ant-tabs-nav .ant-tabs-nav-wrap  .ant-tabs-nav-wrap::after {
+  border-bottom: none !important;
+}
+
+.ant-tabs-bar .ant-tabs-nav-list {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}

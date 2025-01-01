@@ -13,16 +13,16 @@ import vueIcon from "../../assets/vue-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 
 const skillIcons = [
-  wordpress,
-  shopify,
-  reactIcon,
-  typescriptIcon,
-  vueIcon,
-  nodeIcon,
   htmlIcon,
   cssIcon,
-  boostrapIcon,
   jsIcon,
+  typescriptIcon,
+  reactIcon,
+  nodeIcon,
+  // wordpress,
+  // shopify,
+  // vueIcon,
+  boostrapIcon,
 ];
 
 const Skills = () => {

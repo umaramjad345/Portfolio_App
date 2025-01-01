@@ -168,16 +168,16 @@ const HeaderView = () => {
           top: 0,
           left: 0,
           width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
           zIndex: 50,
           padding: "16px 0",
           backgroundColor: "var(--bg-color)",
           backdropFilter: "blur(6px)",
         }}
       >
-        <Row justify="space-between" align="middle">
+        <Row justify="space-between" align="middle" className="container">
           <Col>
             <NavLink exact to="home">
               <span style={{ fontSize: "1.6rem", color: "var(--text-color)" }}>
@@ -218,9 +218,9 @@ const HeaderView = () => {
                   }}
                 >
                   {activeTheme === "dark" ? (
-                    <MoonOutlined style={{ fontSize: "24px", color: "#fff" }} />
+                    <MoonOutlined style={{ fontSize: "24px" }} />
                   ) : (
-                    <SunOutlined style={{ fontSize: "24px", color: "#fff" }} />
+                    <SunOutlined style={{ fontSize: "24px" }} />
                   )}
                 </div>
               </Col>

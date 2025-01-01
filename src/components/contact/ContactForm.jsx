@@ -59,7 +59,18 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="mt-10 w-full flex flex-col justify-center items-center px-4">
+    <div
+      className="container"
+      style={{
+        marginTop: "40px",
+        padding: "20px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
       <Typography.Title
         level={2}
         style={{

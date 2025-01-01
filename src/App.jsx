@@ -7,7 +7,7 @@ import Footer from "./views/Footer";
 
 const App = () => {
   return (
-    <div className="container">
+    <div>
       <HeaderView />
       <SnackbarProvider maxSnack={3}>
         <Home />

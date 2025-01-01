@@ -14,96 +14,128 @@ const { Title, Paragraph } = Typography;
 
 const Hero = () => {
   return (
-    <div className="py-[15%] w-full flex justify-center items-center">
+    <div
+      className="container"
+      style={{
+        marginTop: "12rem",
+        padding: "0px 20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <Row
         gutter={32}
         justify="space-between"
         align="middle"
-        style={{ width: "80%", color: "var(--text-color)" }}
+        style={{ width: "100%", color: "var(--text-color)" }}
       >
         <Col span={12} xs={24} md={12}>
-          <Paragraph
-            style={{
-              fontSize: "1.8rem",
-              color: "var(--text-color)",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            Hello <img src={Hello} alt="Hello" width="40px" />, I'm
-          </Paragraph>
-
-          <Title
-            level={1}
-            style={{
-              fontSize: "6rem",
-              color: "var(--text-color)",
-              display: "inline-flex",
-              alignItems: "center",
-              flexWrap: "nowrap",
-              gap: "8px",
-            }}
-          >
-            Umar Amjad
-          </Title>
-
-          <Title level={3} style={{ color: "#4CAF50" }}>
-            Full Stack Web Developer
-          </Title>
-
-          <Paragraph
-            style={{
-              fontSize: "1.8rem",
-              letterSpacing: "0.1rem",
-              color: "#4CAF50",
-            }}
-          >
-            1+ Years of Experience
-          </Paragraph>
-
-          <BrowserRouter>
-            <NavHashLink smooth to="#contact">
-              <Button
-                type="primary"
-                size="large"
-                style={{ marginTop: "2rem", padding: "1.4rem 6rem" }}
+          <Row>
+            <Col span={12} xs={24} md={12}>
+              <Paragraph
+                style={{
+                  fontSize: "1.8rem",
+                  color: "var(--text-color)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
               >
-                Contact
-              </Button>
-            </NavHashLink>
-          </BrowserRouter>
-
-          <Space size="large" style={{ marginTop: "3rem" }}>
-            <a
-              href="https://www.linkedin.com/in/muhammad-umar-amjad/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image width={40} src={linkedin} alt="LinkedIn" />
-            </a>
-            <a
-              href="https://github.com/umaramjad345"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image width={40} src={githubIcon} alt="GitHub" />
-            </a>
-            <a
-              href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image width={40} src={whatsapp} alt="Whatsapp" />
-            </a>
-            {/* <a
-                href="https://t.me/CodeVinayak"
+                Hello <img src={Hello} alt="Hello" width="40px" />, I'm
+              </Paragraph>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Title
+                level={1}
+                style={{
+                  fontSize: "4rem",
+                  color: "var(--text-color)",
+                  fontWeight: "bold",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  flexWrap: "nowrap",
+                  gap: "8px",
+                }}
+              >
+                Umar Amjad
+              </Title>
+            </Col>
+          </Row>
+          <Row justify="start" style={{ marginBottom: "16px" }}>
+            <Col>
+              <Title level={3} style={{ color: "#4CAF50", fontWeight: "500" }}>
+                Full Stack Web Developer
+              </Title>
+            </Col>
+          </Row>
+          <Row justify="start" style={{ marginBottom: "32px" }}>
+            <Col>
+              <Paragraph
+                style={{
+                  fontSize: "1.8rem",
+                  letterSpacing: "0.1rem",
+                  color: "#4CAF50",
+                }}
+              >
+                1+ Years of Experience
+              </Paragraph>
+            </Col>
+          </Row>
+          <Row justify="start">
+            <Col>
+              <BrowserRouter>
+                <NavHashLink smooth to="#contact">
+                  <Button
+                    type="primary"
+                    size="large"
+                    style={{
+                      padding: "1.4rem 6rem",
+                      marginTop: "2rem",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Contact
+                  </Button>
+                </NavHashLink>
+              </BrowserRouter>
+            </Col>
+          </Row>
+          <Row justify="start" style={{ marginTop: "30px" }}>
+            <Col>
+              <a
+                href="https://www.linkedin.com/in/muhammad-umar-amjad/"
                 target="_blank"
                 rel="noreferrer"
+                style={{ marginRight: "16px" }}
               >
-                <Image width={40} src={telegram} alt="Telegram" />
-              </a> */}
-          </Space>
+                <Image width={40} src={linkedin} alt="LinkedIn" />
+              </a>
+            </Col>
+            <Col>
+              <a
+                href="https://github.com/umaramjad345"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: "16px" }}
+              >
+                <Image width={40} src={githubIcon} alt="GitHub" />
+              </a>
+            </Col>
+            <Col>
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: "16px" }}
+              >
+                <Image width={40} src={whatsapp} alt="Whatsapp" />
+              </a>
+            </Col>
+          </Row>
         </Col>
         <Col xs={24} md={12} style={{ textAlign: "center" }}>
           <Image

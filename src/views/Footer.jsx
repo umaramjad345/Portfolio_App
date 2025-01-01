@@ -9,16 +9,16 @@ import instagramIcon from "../assets/instagram.svg";
 
 const { Text } = Typography;
 
-const Footer = () =>{
+const Footer = () => {
   return (
-    <Layout.Footer
+    <div
       style={{
-        backgroundColor: "#2b2b2b",
+        marginTop: "8rem",
         padding: "3rem 15rem",
-        marginTop: "10rem",
+        backgroundColor: "#2b2b2b",
       }}
     >
-      <Row justify="space-between" align="middle">
+      <Row justify="space-between" align="middle" className="container">
         {/* Logo Section */}
         {/* <Col>
           <a
@@ -32,30 +32,34 @@ const Footer = () =>{
 
         {/* Message Section */}
         <Col>
-          <Space align="center">
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: "1.5rem",
-                letterSpacing: "0.2rem",
-              }}
-            >
-              This Website was made with
-            </Text>
-            <img
-              src={reactIcon}
-              alt="React"
-              style={{
-                width: "2.6rem",
-                animation: "spinning 5s infinite linear",
-              }}
-            />
-          </Space>
+          <Row>
+            <Col>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: "1.5rem",
+                  letterSpacing: "0.2rem",
+                }}
+              >
+                This Website was made with
+              </Text>
+            </Col>
+            <Col>
+              <img
+                src={reactIcon}
+                alt="React"
+                style={{
+                  width: "2.6rem",
+                  animation: "spinning 5s infinite linear",
+                }}
+              />
+            </Col>
+          </Row>
         </Col>
 
         {/* Social Media Links */}
         <Col>
-          <Space size="large">
+          <Col>
             <a
               href="www.linkedin.com/in/muhammad-umar-amjad"
               target="_blank"
@@ -67,6 +71,8 @@ const Footer = () =>{
                 style={{ width: "3rem", height: "3rem" }}
               />
             </a>
+          </Col>
+          <Col>
             <a
               href="https://github.com/umaramjad345"
               target="_blank"
@@ -78,6 +84,8 @@ const Footer = () =>{
                 style={{ width: "3rem", height: "3rem" }}
               />
             </a>
+          </Col>
+          <Col>
             <a
               href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
               target="_blank"
@@ -89,14 +97,16 @@ const Footer = () =>{
                 style={{ width: "3rem", height: "3rem" }}
               />
             </a>
-            {/* <a href="https://t.me/CodeVinayak" target="_blank" rel="noreferrer">
+          </Col>
+
+          {/* <a href="https://t.me/CodeVinayak" target="_blank" rel="noreferrer">
               <img
                 src={telegram}
                 alt="Telegram"
                 style={{ width: "3rem", height: "3rem" }}
               />
             </a> */}
-            {/* <a
+          {/* <a
               href="https://www.instagram.com/vinayaksingh.in"
               target="_blank"
               rel="noreferrer"
@@ -107,11 +117,10 @@ const Footer = () =>{
                 style={{ width: "3rem", height: "3rem" }}
               />
             </a> */}
-          </Space>
         </Col>
       </Row>
-    </Layout.Footer>
+    </div>
   );
-}
+};
 
 export default Footer;

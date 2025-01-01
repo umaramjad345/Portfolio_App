@@ -9,7 +9,17 @@ const { Title, Paragraph } = Typography;
 
 const Contact = () => {
   return (
-    <section className="mt-10 w-[80%] flex flex-col justify-center items-center mx-auto">
+    <section
+      id="contact"
+      className="container"
+      style={{
+        marginTop: "40px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       {/* <Space
         direction="vertical"
         size="large"
@@ -42,7 +52,7 @@ const Contact = () => {
         justify="center"
         align="center"
         gutter={[16, 16]}
-        style={{ width: "70%" }}
+        style={{ width: "80%" }}
       >
         <Col span={24} md={12}>
           <Card
@@ -127,7 +137,7 @@ const Contact = () => {
         justify="center"
         align="center"
         gutter={[16, 16]}
-        style={{ width: "70%" }}
+        style={{ width: "80%" }}
       >
         <ContactForm />
       </Row>

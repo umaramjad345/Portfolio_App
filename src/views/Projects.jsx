@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Button, Typography } from "antd";
+import { Row, Col, Card, Button, Typography, Tabs } from "antd";
 import {
   GithubOutlined,
   GlobalOutlined,
@@ -8,75 +8,359 @@ import {
 import githubIcon from "../assets/github.svg";
 import externalLink from "../assets/external-link.svg";
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
+
+const professionalProjects = (
+  <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
+    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+      <Card
+        hoverable
+        actions={[]}
+        style={{
+          height: "100%",
+          border: "none",
+          borderRadius: "15px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(40, 40, 40, 0.8)",
+          color: "var(--text-color)",
+          transition:
+            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+        }}
+      >
+        <Row>
+          <Col>
+            <Row>
+              <Col>
+                <Title level={4} style={{color: "var(--text-color)",}}>
+                  Serverless Voting Application for Programming Languages
+                </Title>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Text style={{color: "var(--text-color)",}}>
+                  Developed a serverless voting app using React, AWS Lambda, API
+                  Gateway, and DynamoDB, enabling users to view programming
+                  languages, cast votes, and access details through an
+                  interactive UI.
+                </Text>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <ul>
+                  <li>AWS Lambda</li>
+                  <li>API Gateway</li>
+                  <li>DynamoDB</li>
+                </ul>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <a
+                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <GithubOutlined />
+                </a>
+                ,
+              </Col>
+              <Col>
+                <a
+                  href="https://vote.vinayaksingh.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <LinkOutlined />
+                </a>
+                ,
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Card>
+    </Col>
+    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+    <Card
+        hoverable
+        actions={[]}
+        style={{
+          height: "100%",
+          border: "none",
+          borderRadius: "15px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(40, 40, 40, 0.8)",
+          color: "var(--text-color)",
+          transition:
+            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+        }}
+      >
+        <Row>
+          <Col>
+            <Row>
+              <Col>
+                <Title level={4}>
+                  Serverless Voting Application for Programming Languages
+                </Title>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Text>
+                  Developed a serverless voting app using React, AWS Lambda, API
+                  Gateway, and DynamoDB, enabling users to view programming
+                  languages, cast votes, and access details through an
+                  interactive UI.
+                </Text>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <ul>
+                  <li>AWS Lambda</li>
+                  <li>API Gateway</li>
+                  <li>DynamoDB</li>
+                </ul>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <a
+                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <GithubOutlined />
+                </a>
+                ,
+              </Col>
+              <Col>
+                <a
+                  href="https://vote.vinayaksingh.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <LinkOutlined />
+                </a>
+                ,
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Card>
+    </Col>
+  </Row>
+);
+
+const practiceProjects = (
+  <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
+    {/* Project 1 */}
+    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+    <Card
+        hoverable
+        actions={[]}
+        style={{
+          height: "100%",
+          border: "none",
+          borderRadius: "15px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(40, 40, 40, 0.8)",
+          color: "var(--text-color)",
+          transition:
+            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+        }}
+      >
+        <Row>
+          <Col>
+            <Row>
+              <Col>
+                <Title level={4}>
+                  Serverless Voting Application for Programming Languages
+                </Title>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Text>
+                  Developed a serverless voting app using React, AWS Lambda, API
+                  Gateway, and DynamoDB, enabling users to view programming
+                  languages, cast votes, and access details through an
+                  interactive UI.
+                </Text>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <ul>
+                  <li>AWS Lambda</li>
+                  <li>API Gateway</li>
+                  <li>DynamoDB</li>
+                </ul>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <a
+                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <GithubOutlined />
+                </a>
+                ,
+              </Col>
+              <Col>
+                <a
+                  href="https://vote.vinayaksingh.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontSize: "20px",
+                    color: "#6f6f6f",
+                    border: "none",
+                    backgroundColor: "rgba(40, 40, 40, 0.8)",
+                  }}
+                >
+                  <LinkOutlined />
+                </a>
+                ,
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Card>
+    </Col>
+  </Row>
+);
 
 const Projects = () => {
+  const items = [
+    {
+      key: "1",
+      label: (
+        <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
+          Professional Projects
+        </Text>
+      ),
+      children: professionalProjects,
+    },
+    {
+      key: "2",
+      label: (
+        <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
+          Practice Projects
+        </Text>
+      ),
+      children: practiceProjects,
+    },
+  ];
+
   return (
-    <section className="w-[80%] mx-auto flex flex-col justify-center items-center">
+    <Row
+      className="container"
+      justify="center"
+      align="start"
+      style={{
+        marginTop: "8rem",
+        padding: "0px 20px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        // alignItems: "center",
+      }}
+    >
       <Title
         level={2}
-        style={{ textAlign: "center", color: "var(--text-color)" }}
+        style={{
+          color: "var(--text-color)",
+          fontWeight: "bold",
+          marginBottom: "40px",
+        }}
       >
         My Projects
       </Title>
-      <Row gutter={[16, 16]} justify="center" style={{ display: "flex" }}>
-        {/* Project 1 */}
-        <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-          <Card
-            hoverable
-            cover={
-              <svg
-                width="50"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#23ce6b"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <title>Folder</title>
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-            }
-            actions={[
-              <a
-                href="https://github.com/CodeVinayak/Serverless-Voting-Application"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubOutlined />
-              </a>,
-              <a
-                href="https://vote.vinayaksingh.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkOutlined />
-              </a>,
-            ]}
-            style={{ height: "100%" }}
-          >
-            <Title level={4}>
-              Serverless Voting Application for Programming Languages
-            </Title>
-            <Text>
-              Developed a serverless voting app using React, AWS Lambda, API
-              Gateway, and DynamoDB, enabling users to view programming
-              languages, cast votes, and access details through an interactive
-              UI.
-            </Text>
-            <ul>
-              <li>AWS Lambda</li>
-              <li>API Gateway</li>
-              <li>DynamoDB</li>
-            </ul>
-          </Card>
-        </Col>
+      <Tabs
+        defaultActiveKey="1"
+        items={items}
+        style={{
+          border: "none",
+          borderBottom: "none",
+          color: "var(--bg-color)",
+        }}
+        tabBarStyle={{
+          borderBottom: "none",
+          boxShadow: "none",
+        }}
+      />
+    </Row>
+  );
+};
 
-        {/* Project 2 */}
-        <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+export default Projects;
+
+{
+  /* <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
           <Card
             hoverable
             cover={
@@ -90,6 +374,7 @@ const Projects = () => {
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                className="transition-all duration-300 ease-in-out hover:scale-110"
               >
                 <title>Folder</title>
                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
@@ -100,6 +385,7 @@ const Projects = () => {
                 href="https://github.com/CodeVinayak/AI-Chatbot-Assistant"
                 target="_blank"
                 rel="noreferrer"
+                className="text-lg text-gray-600 hover:text-green-500"
               >
                 <GithubOutlined />
               </a>,
@@ -107,15 +393,20 @@ const Projects = () => {
                 href="https://ai-chatbot-t8fn.onrender.com"
                 target="_blank"
                 rel="noreferrer"
+                className="text-lg text-gray-600 hover:text-blue-500"
               >
                 <LinkOutlined />
               </a>,
             ]}
-            style={{ height: "100%" }}
+            style={{
+              height: "100%",
+              borderRadius: "15px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              transition: "transform 0.3s ease-in-out",
+            }}
+            className="hover:transform hover:scale-105"
           >
-            <Title level={4}>
-              GeniusBot: AI-Powered Assistance with PDF Insight
-            </Title>
+            <Title level={4}>GeniusBot: AI-Powered Assistance with PDF Insight</Title>
             <Text>
               Developed an interactive chatbot application using Streamlit,
               OpenAI's GPT-3.5-turbo language model, and PyPDF2 for PDF text
@@ -128,117 +419,57 @@ const Projects = () => {
               <li>LangChain</li>
             </ul>
           </Card>
-        </Col>
+        </Col> */
+}
 
-        {/* Project 3 */}
-        <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-          <Card
-            hoverable
-            cover={
-              <svg
-                width="50"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#23ce6b"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <title>Folder</title>
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-            }
-            actions={[
-              <a
-                href="https://github.com/CodeVinayak/Jupyter-Notebook/tree/main/Credit%20Risk%20Analysis"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubOutlined />
-              </a>,
-              <a
-                href="https://github.com/CodeVinayak/Jupyter-Notebook/blob/main/Credit%20Risk%20Analysis/Credit_Risk_Analysis.ipynb"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkOutlined />
-              </a>,
-            ]}
-            style={{ height: "100%" }}
+{
+  /* <Card
+        hoverable
+        actions={[
+          <a
+            href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontSize: "20px", color: "#6f6f6f" }}
           >
-            <Title level={4}>Credit Risk Analysis Project</Title>
-            <Text>
-              Developed a credit risk classification model using XGBoost,
-              achieving 100% precision, recall, and F1-scores for predicting
-              loan defaults.
-            </Text>
-            <ul>
-              <li>XGBoost</li>
-              <li>Pandas</li>
-              <li>Matplotlib</li>
-            </ul>
-          </Card>
-        </Col>
-
-        {/* Project 4 */}
-        <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-          <Card
-            hoverable
-            cover={
-              <svg
-                width="50"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#23ce6b"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <title>Folder</title>
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-            }
-            actions={[
-              <a
-                href="https://github.com/CodeVinayak/MediBook-Medical-Appointment-Scheduler-with-Health-History"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubOutlined />
-              </a>,
-              <a
-                href="https://medibook.vinayaksingh.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkOutlined />
-              </a>,
-            ]}
-            style={{ height: "100%" }}
+            <GithubOutlined />
+          </a>,
+          <a
+            href="https://vote.vinayaksingh.com"
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontSize: "20px", color: "#6f6f6f" }}
           >
-            <Title level={4}>
-              MediBook: Medical Appointment Scheduler with Health History
-            </Title>
-            <Text>
-              Developed a secure medical appointment management platform using
-              MySQL database, role-based access control, and encryption
-              techniques for scheduling and patient records management.
-            </Text>
-            <ul>
-              <li>PHP</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>MySQL</li>
-            </ul>
-          </Card>
-        </Col>
-      </Row>
-    </section>
-  );
-};
-
-export default Projects;
+            <LinkOutlined />
+          </a>,
+        ]}
+        style={{
+          height: "100%",
+          borderRadius: "15px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+          transition: "transform 0.3s ease-in-out",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+        }}
+      >
+        <Title level={4}>
+          Serverless Voting Application for Programming Languages
+        </Title>
+        <Text>
+          Developed a serverless voting app using React, AWS Lambda, API
+          Gateway, and DynamoDB, enabling users to view programming languages,
+          cast votes, and access details through an interactive UI.
+        </Text>
+        <ul>
+          <li>AWS Lambda</li>
+          <li>API Gateway</li>
+          <li>DynamoDB</li>
+        </ul>
+      </Card> */
+}

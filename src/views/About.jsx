@@ -9,11 +9,21 @@ const { Title } = Typography;
 
 const About = () => {
   return (
-    <div className="mt-12 w-full flex justify-center items-center">
+    <div
+      className="container"
+      style={{
+        marginTop: "12rem",
+        padding: "0px 20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <Row
         gutter={32}
         align="top"
-        style={{ width: "80%", color: "var(--text-color)" }}
+        style={{ width: "100%", color: "var(--text-color)" }}
       >
         <Col xs={24} md={12}>
           <AboutBio />
