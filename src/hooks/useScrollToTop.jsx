@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FiChevronUp } from "react-icons/fi";
+import { Button, Tooltip } from "antd";
 
 const useScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -36,7 +37,7 @@ const useScrollToTop = () => {
     alignItems: "center",
     justifyContent: "center",
     zIndex: "999",
-    borderRadius: "10px",
+    borderRadius: "30px",
     right: "50px",
     bottom: "50px",
     padding: "10px",
@@ -66,18 +67,20 @@ const useScrollToTop = () => {
   return (
     <>
       <style>{fadeInKeyframes}</style>
-      <FiChevronUp
-        className="scrollToTopBtn"
-        onClick={backToTop}
-        style={scrollToTopBtnStyle}
-        onMouseOver={(e) =>
-          (e.currentTarget.style.background =
-            scrollToTopBtnHoverStyle.background)
-        }
-        onMouseOut={(e) =>
-          (e.currentTarget.style.background = "rgba(240, 248, 255, 0.3)")
-        }
-      />
+      <Tooltip title="Scroll Up">
+        <FiChevronUp
+          className="scrollToTopBtn"
+          onClick={backToTop}
+          style={scrollToTopBtnStyle}
+          onMouseOver={(e) =>
+            (e.currentTarget.style.background =
+              scrollToTopBtnHoverStyle.background)
+          }
+          onMouseOut={(e) =>
+            (e.currentTarget.style.background = "rgba(240, 248, 255, 0.3)")
+          }
+        />
+      </Tooltip>
     </>
   );
 };
