@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Row, Col, Typography, Button, Space, Image } from "antd";
 import { NavHashLink } from "react-router-hash-link";
+import ScrollDownButton from "../components/hero/ScrollDownButton";
 
 import Illustration from "../assets/illustration.svg";
 import linkedin from "../assets/linkedin.svg";
@@ -9,8 +10,9 @@ import githubIcon from "../assets/github.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import Hello from "../assets/Hello.gif";
 import telegram from "../assets/telegram.svg";
+import Resume from "../assets/Resume.pdf";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const Hero = () => {
   return (
@@ -27,17 +29,55 @@ const Hero = () => {
       }}
     >
       <Row
-        gutter={32}
-        justify="space-between"
-        align="middle"
+        gutter={[16, 16]}
+        justify="center"
+        align="center"
         style={{
           width: "100%",
           color: "var(--text-color)",
         }}
       >
-        <Col span={12} xs={24} md={12}>
-          <Row>
-            <Col span={12} xs={24} md={12}>
+        <Col>
+          <Row justify="center" align="center" style={{ marginTop: "30px" }}>
+            <Col>
+              <a
+                href="https://www.linkedin.com/in/muhammad-umar-amjad/"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: "16px" }}
+              >
+                <Image width={40} src={linkedin} alt="LinkedIn" />
+              </a>
+            </Col>
+          </Row>
+          <Row justify="center" align="center" style={{ marginTop: "30px" }}>
+            <Col>
+              <a
+                href="https://github.com/umaramjad345"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: "16px" }}
+              >
+                <Image width={40} src={githubIcon} alt="GitHub" />
+              </a>
+            </Col>
+          </Row>
+          <Row justify="center" align="center" style={{ marginTop: "30px" }}>
+            <Col>
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: "16px" }}
+              >
+                <Image width={40} src={whatsapp} alt="Whatsapp" />
+              </a>
+            </Col>
+          </Row>
+        </Col>
+        <Col>
+          <Row justify="center" align="center">
+            <Col>
               <Paragraph
                 style={{
                   fontSize: "1.8rem",
@@ -51,7 +91,7 @@ const Hero = () => {
               </Paragraph>
             </Col>
           </Row>
-          <Row>
+          <Row justify="center" align="center">
             <Col>
               <Title
                 level={1}
@@ -69,14 +109,14 @@ const Hero = () => {
               </Title>
             </Col>
           </Row>
-          <Row justify="start" style={{ marginBottom: "16px" }}>
+          <Row justify="center" align="center" style={{ marginBottom: "16px" }}>
             <Col>
               <Title level={3} style={{ color: "#4CAF50", fontWeight: "500" }}>
                 Full Stack Web Developer
               </Title>
             </Col>
           </Row>
-          <Row justify="start" style={{ marginBottom: "32px" }}>
+          <Row justify="center" align="center" style={{ marginBottom: "32px" }}>
             <Col>
               <Paragraph
                 style={{
@@ -89,7 +129,7 @@ const Hero = () => {
               </Paragraph>
             </Col>
           </Row>
-          <Row justify="start">
+          <Row justify="center" align="center">
             <Col>
               <NavHashLink smooth to="#contact">
                 <Button
@@ -105,41 +145,37 @@ const Hero = () => {
                 </Button>
               </NavHashLink>
             </Col>
-          </Row>
-          <Row justify="start" style={{ marginTop: "30px" }}>
             <Col>
-              <a
-                href="https://www.linkedin.com/in/muhammad-umar-amjad/"
-                target="_blank"
-                rel="noreferrer"
-                style={{ marginRight: "16px" }}
+              <Button
+                type="primary"
+                size="large"
+                style={{
+                  padding: "1.4rem 6rem",
+                  marginTop: "2rem",
+                  fontSize: "1.5rem",
+                }}
               >
-                <Image width={40} src={linkedin} alt="LinkedIn" />
-              </a>
-            </Col>
-            <Col>
-              <a
-                href="https://github.com/umaramjad345"
-                target="_blank"
-                rel="noreferrer"
-                style={{ marginRight: "16px" }}
-              >
-                <Image width={40} src={githubIcon} alt="GitHub" />
-              </a>
-            </Col>
-            <Col>
-              <a
-                href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
-                target="_blank"
-                rel="noreferrer"
-                style={{ marginRight: "16px" }}
-              >
-                <Image width={40} src={whatsapp} alt="Whatsapp" />
-              </a>
+                Resume
+              </Button>
             </Col>
           </Row>
         </Col>
-        <Col xs={24} md={12} style={{ textAlign: "center" }}>
+        <Col>
+          <Row>
+            <Col>
+              <ScrollDownButton />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </div>
+  );
+};
+
+export default Hero;
+
+{
+  /* <Col xs={24} md={12} style={{ textAlign: "center" }}>
           <Image
             width="75%"
             src={Illustration}
@@ -157,10 +193,5 @@ const Hero = () => {
               (e.currentTarget.style.filter = "grayscale(100%)")
             }
           />
-        </Col>
-      </Row>
-    </div>
-  );
-};
-
-export default Hero;
+        </Col> */
+}
