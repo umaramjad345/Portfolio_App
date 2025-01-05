@@ -25,31 +25,62 @@ import { SiFirebase, SiNextdotjs } from "react-icons/si";
 //   { icon: <DiPython />, style: "shadow-orange-500" },
 //   { icon: <DiGit />, style: "shadow-gray-400" },
 //   { icon: <SiFirebase />, style: "shadow-yellow-500" },
-  // {
-  //   src: graphql,
-  //   style: "shadow-pink-400",
-  // },
+// {
+//   src: graphql,
+//   style: "shadow-pink-400",
+// },
 // ];
 
 const skillIcons = [
-  { icon: <FaHtml5 />, style: { boxShadow: "0 4px 12px rgba(255, 165, 0, 0.7)" } },
-  { icon: <FaCss3Alt />, style: { boxShadow: "0 4px 12px rgba(59, 130, 246, 0.7)" } },
-  { icon: <DiJavascript1 />, style: { boxShadow: "0 4px 12px rgba(255, 221, 51, 0.7)" } },
-  { icon: <DiReact />, style: { boxShadow: "0 4px 12px rgba(59, 130, 246, 0.7)" } },
-  { icon: <SiNextdotjs />, style: { boxShadow: "0 4px 12px rgba(255, 255, 255, 0.7)" } },
-  { icon: <DiNodejs />, style: { boxShadow: "0 4px 12px rgba(72, 186, 44, 0.7)" } },
-  { icon: <DiMongodb />, style: { boxShadow: "0 4px 12px rgba(35, 111, 71, 0.7)" } },
-  { icon: <DiPython />, style: { boxShadow: "0 4px 12px rgba(255, 165, 0, 0.7)" } },
-  { icon: <DiGit />, style: { boxShadow: "0 4px 12px rgba(128, 128, 128, 0.7)" } },
-  { icon: <SiFirebase />, style: { boxShadow: "0 4px 12px rgba(254, 202, 87, 0.7)" } },
+  {
+    icon: <FaHtml5 />,
+    style: { boxShadow: "0 4px 12px rgba(255, 165, 0, 0.7)" },
+  },
+  {
+    icon: <FaCss3Alt />,
+    style: { boxShadow: "0 4px 12px rgba(59, 130, 246, 0.7)" },
+  },
+  {
+    icon: <DiJavascript1 />,
+    style: { boxShadow: "0 4px 12px rgba(255, 221, 51, 0.7)" },
+  },
+  {
+    icon: <DiReact />,
+    style: { boxShadow: "0 4px 12px rgba(59, 130, 246, 0.7)" },
+  },
+  {
+    icon: <SiNextdotjs />,
+    style: { boxShadow: "0 4px 12px rgba(255, 255, 255, 0.7)" },
+  },
+  {
+    icon: <DiNodejs />,
+    style: { boxShadow: "0 4px 12px rgba(72, 186, 44, 0.7)" },
+  },
+  {
+    icon: <DiMongodb />,
+    style: { boxShadow: "0 4px 12px rgba(35, 111, 71, 0.7)" },
+  },
+  {
+    icon: <DiPython />,
+    style: { boxShadow: "0 4px 12px rgba(255, 165, 0, 0.7)" },
+  },
+  {
+    icon: <DiGit />,
+    style: { boxShadow: "0 4px 12px rgba(128, 128, 128, 0.7)" },
+  },
+  {
+    icon: <SiFirebase />,
+    style: { boxShadow: "0 4px 12px rgba(254, 202, 87, 0.7)" },
+  },
 ];
 
 const Skills = () => {
   return (
     <Row
+      id="skills"
       className="container"
       style={{
-        marginTop: "40px",
+        marginTop: "8rem",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -58,7 +89,7 @@ const Skills = () => {
     >
       <Col>
         <Row>
-          <Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
             <Title level={2} style={{ color: "var(--text-color)" }}>
               Skills
             </Title>

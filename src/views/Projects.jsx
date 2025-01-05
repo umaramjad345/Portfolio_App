@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col, Card, Button, Typography, Tabs } from "antd";
+import React, { useEffect } from "react";
+import { Row, Col, Card, Button, Typography, Tabs, Divider, Tag } from "antd";
 import {
   GithubOutlined,
   GlobalOutlined,
@@ -7,314 +7,46 @@ import {
 } from "@ant-design/icons";
 import githubIcon from "../assets/github.svg";
 import externalLink from "../assets/external-link.svg";
+import projectsData from "../data/projectsData.jsx";
+import ProjectCard from "../components/projects/ProjectCard";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const { Title, Text, Paragraph } = Typography;
-
-const professionalProjects = (
-  <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
-    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-      <Card
-        hoverable
-        actions={[]}
-        style={{
-          height: "100%",
-          border: "none",
-          borderRadius: "15px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "rgba(40, 40, 40, 0.8)",
-          color: "var(--text-color)",
-          transition:
-            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.05)";
-          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
-        }}
-      >
-        <Row>
-          <Col>
-            <Row>
-              <Col>
-                <Title level={4} style={{color: "var(--text-color)",}}>
-                  Serverless Voting Application for Programming Languages
-                </Title>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Text style={{color: "var(--text-color)",}}>
-                  Developed a serverless voting app using React, AWS Lambda, API
-                  Gateway, and DynamoDB, enabling users to view programming
-                  languages, cast votes, and access details through an
-                  interactive UI.
-                </Text>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <ul>
-                  <li>AWS Lambda</li>
-                  <li>API Gateway</li>
-                  <li>DynamoDB</li>
-                </ul>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <a
-                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <GithubOutlined />
-                </a>
-                ,
-              </Col>
-              <Col>
-                <a
-                  href="https://vote.vinayaksingh.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <LinkOutlined />
-                </a>
-                ,
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-    </Col>
-    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-    <Card
-        hoverable
-        actions={[]}
-        style={{
-          height: "100%",
-          border: "none",
-          borderRadius: "15px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "rgba(40, 40, 40, 0.8)",
-          color: "var(--text-color)",
-          transition:
-            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.05)";
-          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
-        }}
-      >
-        <Row>
-          <Col>
-            <Row>
-              <Col>
-                <Title level={4}>
-                  Serverless Voting Application for Programming Languages
-                </Title>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Text>
-                  Developed a serverless voting app using React, AWS Lambda, API
-                  Gateway, and DynamoDB, enabling users to view programming
-                  languages, cast votes, and access details through an
-                  interactive UI.
-                </Text>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <ul>
-                  <li>AWS Lambda</li>
-                  <li>API Gateway</li>
-                  <li>DynamoDB</li>
-                </ul>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <a
-                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <GithubOutlined />
-                </a>
-                ,
-              </Col>
-              <Col>
-                <a
-                  href="https://vote.vinayaksingh.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <LinkOutlined />
-                </a>
-                ,
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-    </Col>
-  </Row>
-);
-
-const practiceProjects = (
-  <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
-    {/* Project 1 */}
-    <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
-    <Card
-        hoverable
-        actions={[]}
-        style={{
-          height: "100%",
-          border: "none",
-          borderRadius: "15px",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "rgba(40, 40, 40, 0.8)",
-          color: "var(--text-color)",
-          transition:
-            "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.05)";
-          e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-          e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
-        }}
-      >
-        <Row>
-          <Col>
-            <Row>
-              <Col>
-                <Title level={4}>
-                  Serverless Voting Application for Programming Languages
-                </Title>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Text>
-                  Developed a serverless voting app using React, AWS Lambda, API
-                  Gateway, and DynamoDB, enabling users to view programming
-                  languages, cast votes, and access details through an
-                  interactive UI.
-                </Text>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <ul>
-                  <li>AWS Lambda</li>
-                  <li>API Gateway</li>
-                  <li>DynamoDB</li>
-                </ul>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <a
-                  href="https://github.com/CodeVinayak/Serverless-Voting-Application"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <GithubOutlined />
-                </a>
-                ,
-              </Col>
-              <Col>
-                <a
-                  href="https://vote.vinayaksingh.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontSize: "20px",
-                    color: "#6f6f6f",
-                    border: "none",
-                    backgroundColor: "rgba(40, 40, 40, 0.8)",
-                  }}
-                >
-                  <LinkOutlined />
-                </a>
-                ,
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card>
-    </Col>
-  </Row>
-);
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-  const items = [
-    {
-      key: "1",
-      label: (
-        <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
-          Professional Projects
-        </Text>
-      ),
-      children: professionalProjects,
-    },
-    {
-      key: "2",
-      label: (
-        <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
-          Practice Projects
-        </Text>
-      ),
-      children: practiceProjects,
-    },
-  ];
+  useEffect(() => {
+    // gsap.from(".projects-title", {
+    //   x: -200,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   ease: "power4.out",
+    //   scrollTrigger: {
+    //     trigger: ".projects-title",
+    //     start: "bottom top",
+    //     end: "top 90%",
+    //     once: true,
+    //     markers: true,
+    //   },
+    // });
+
+    // gsap.from(".project-card", {
+    //   x: 200,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "power4.out",
+    //   stagger: 0.3,
+    //   scrollTrigger: {
+    //     trigger: ".projects-section",
+    //     start: "bottom top",
+    //     end: "top 70%",
+    //     scrub: true,
+    //     once: true,
+    //     markers: false,
+    //   },
+    // });
+  }, []);
 
   return (
     <Row
@@ -330,34 +62,351 @@ const Projects = () => {
         // alignItems: "center",
       }}
     >
-      <Title
-        level={2}
-        style={{
-          color: "var(--text-color)",
-          fontWeight: "bold",
-          marginBottom: "40px",
-        }}
+      <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
+        <Col>
+          <Title
+            className="projects-title"
+            level={2}
+            style={{
+              color: "var(--text-color)",
+              marginBottom: "40px",
+            }}
+          >
+            My Projects
+          </Title>
+        </Col>
+      </Row>
+      <Row
+        id="projects"
+        className="projects-section"
+        gutter={[16, 16]}
+        justify="start"
+        style={{ display: "flex", width: "100%" }}
       >
-        My Projects
-      </Title>
-      <Tabs
-        defaultActiveKey="1"
-        items={items}
-        style={{
-          border: "none",
-          borderBottom: "none",
-          color: "var(--bg-color)",
-        }}
-        tabBarStyle={{
-          borderBottom: "none",
-          boxShadow: "none",
-        }}
-      />
+        {projectsData.map((project, index) => (
+          <Col
+            key={index}
+            xs={24}
+            sm={12}
+            md={8}
+            lg={6}
+            style={{ display: "flex" }}
+            className="project-card"
+          >
+            <ProjectCard project={project} />
+          </Col>
+        ))}
+      </Row>
     </Row>
   );
 };
 
 export default Projects;
+
+// const items = [
+//   {
+//     key: "1",
+//     label: (
+//       <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
+//         Professional Projects
+//       </Text>
+//     ),
+//     children: professionalProjects,
+//   },
+//   {
+//     key: "2",
+//     label: (
+//       <Text style={{ fontSize: "1.25rem", color: "var(--text-color)" }}>
+//         Practice Projects
+//       </Text>
+//     ),
+//     children: practiceProjects,
+//   },
+// ];
+
+// const professionalProjects = (
+//   <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
+//     <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+//       <Card
+//         hoverable
+//         actions={[]}
+//         style={{
+//           height: "100%",
+//           border: "none",
+//           borderRadius: "15px",
+//           boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+//           backgroundColor: "rgba(40, 40, 40, 0.8)",
+//           color: "var(--text-color)",
+//           transition:
+//             "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+//         }}
+//         onMouseEnter={(e) => {
+//           e.currentTarget.style.transform = "scale(1.05)";
+//           e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+//         }}
+//         onMouseLeave={(e) => {
+//           e.currentTarget.style.transform = "scale(1)";
+//           e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+//         }}
+//       >
+//         <Row>
+//           <Col>
+//             <Row>
+//               <Col>
+//                 <Title level={4} style={{ color: "var(--text-color)" }}>
+//                   Serverless Voting Application for Programming Languages
+//                 </Title>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <Text style={{ color: "var(--text-color)" }}>
+//                   Developed a serverless voting app using React, AWS Lambda, API
+//                   Gateway, and DynamoDB, enabling users to view programming
+//                   languages, cast votes, and access details through an
+//                   interactive UI.
+//                 </Text>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <ul>
+//                   <li>AWS Lambda</li>
+//                   <li>API Gateway</li>
+//                   <li>DynamoDB</li>
+//                 </ul>
+//               </Col>
+//             </Row>
+//             <Row gutter={[16, 16]} justify="space-between" align="center">
+//               <Col>
+//                 <a
+//                   href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <GithubOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//               <Col>
+//                 <a
+//                   href="https://vote.vinayaksingh.com"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <LinkOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//             </Row>
+//           </Col>
+//         </Row>
+//       </Card>
+//     </Col>
+//     <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+//       <Card
+//         hoverable
+//         actions={[]}
+//         style={{
+//           height: "100%",
+//           border: "none",
+//           borderRadius: "15px",
+//           boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+//           backgroundColor: "rgba(40, 40, 40, 0.8)",
+//           color: "var(--text-color)",
+//           transition:
+//             "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+//         }}
+//         onMouseEnter={(e) => {
+//           e.currentTarget.style.transform = "scale(1.05)";
+//           e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+//         }}
+//         onMouseLeave={(e) => {
+//           e.currentTarget.style.transform = "scale(1)";
+//           e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+//         }}
+//       >
+//         <Row>
+//           <Col>
+//             <Row>
+//               <Col>
+//                 <Title level={4}>
+//                   Serverless Voting Application for Programming Languages
+//                 </Title>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <Text>
+//                   Developed a serverless voting app using React, AWS Lambda, API
+//                   Gateway, and DynamoDB, enabling users to view programming
+//                   languages, cast votes, and access details through an
+//                   interactive UI.
+//                 </Text>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <ul>
+//                   <li>AWS Lambda</li>
+//                   <li>API Gateway</li>
+//                   <li>DynamoDB</li>
+//                 </ul>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <a
+//                   href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <GithubOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//               <Col>
+//                 <a
+//                   href="https://vote.vinayaksingh.com"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <LinkOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//             </Row>
+//           </Col>
+//         </Row>
+//       </Card>
+//     </Col>
+//   </Row>
+// );
+
+// const practiceProjects = (
+//   <Row gutter={[16, 16]} justify="start" style={{ display: "flex" }}>
+//     {/* Project 1 */}
+//     <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>
+//       <Card
+//         hoverable
+//         actions={[]}
+//         style={{
+//           height: "100%",
+//           border: "none",
+//           borderRadius: "15px",
+//           boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+//           backgroundColor: "rgba(40, 40, 40, 0.8)",
+//           color: "var(--text-color)",
+//           transition:
+//             "transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease",
+//         }}
+//         onMouseEnter={(e) => {
+//           e.currentTarget.style.transform = "scale(1.05)";
+//           e.currentTarget.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.15)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0)"; // Fully transparent on hover
+//         }}
+//         onMouseLeave={(e) => {
+//           e.currentTarget.style.transform = "scale(1)";
+//           e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+//           e.currentTarget.style.backgroundColor = "rgba(40, 40, 40, 0.8)"; // Reset to dark background with transparency
+//         }}
+//       >
+//         <Row>
+//           <Col>
+//             <Row>
+//               <Col>
+//                 <Title level={4}>
+//                   Serverless Voting Application for Programming Languages
+//                 </Title>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <Text>
+//                   Developed a serverless voting app using React, AWS Lambda, API
+//                   Gateway, and DynamoDB, enabling users to view programming
+//                   languages, cast votes, and access details through an
+//                   interactive UI.
+//                 </Text>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <ul>
+//                   <li>AWS Lambda</li>
+//                   <li>API Gateway</li>
+//                   <li>DynamoDB</li>
+//                 </ul>
+//               </Col>
+//             </Row>
+//             <Row>
+//               <Col>
+//                 <a
+//                   href="https://github.com/CodeVinayak/Serverless-Voting-Application"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <GithubOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//               <Col>
+//                 <a
+//                   href="https://vote.vinayaksingh.com"
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     fontSize: "20px",
+//                     color: "#6f6f6f",
+//                     border: "none",
+//                     backgroundColor: "rgba(40, 40, 40, 0.8)",
+//                   }}
+//                 >
+//                   <LinkOutlined />
+//                 </a>
+//                 ,
+//               </Col>
+//             </Row>
+//           </Col>
+//         </Row>
+//       </Card>
+//     </Col>
+//   </Row>
+// );
 
 {
   /* <Col xs={24} sm={12} md={8} lg={6} style={{ display: "flex" }}>

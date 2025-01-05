@@ -4,15 +4,17 @@ import { Row, Col, Typography } from "antd";
 import AboutImage from "../components/about/AboutImage";
 import AboutBio from "../components/about/AboutBio";
 import Skills from "../components/about/Skills";
+import aboutData from "../data/aboutData";
 
 const { Title } = Typography;
 
 const About = () => {
   return (
-    <div
+    <div  
+      id="about"
       className="container"
       style={{
-        marginTop: "12rem",
+        marginTop: "8rem",
         padding: "0px 20px",
         display: "flex",
         justifyContent: "center",
@@ -26,7 +28,7 @@ const About = () => {
         style={{ width: "100%", color: "var(--text-color)" }}
       >
         <Col xs={24} md={12}>
-          <AboutBio />
+        <AboutBio aboutData={aboutData} />
           <Title
             level={3}
             // style={{ color: "#4CAF50" }}

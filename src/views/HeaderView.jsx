@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HashRouter as Router, NavLink } from "react-router-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
 import { Menu, Drawer, Row, Col } from "antd";
 import { NavHashLink, HashLink } from "react-router-hash-link";
@@ -13,6 +13,7 @@ import {
 import useThemeSwitcher from "../hooks/useThemeSwitcher";
 import { useMediaQuery } from "react-responsive";
 
+
 const HeaderView = () => {
   const [isActive, setActive] = useState(false);
   const [activeTheme, setTheme] = useThemeSwitcher();
@@ -23,145 +24,149 @@ const HeaderView = () => {
     setActive(false);
   };
 
-  const menuItems = [
-    {
-      key: "home",
-      label: (
-        <a
-          to="#home"
-          onClick={closeMenu}
-          style={{ color: "var(--text-color)", textDecoration: "none" }}
-        >
-          Home
-        </a>
-      ),
-    },
-    {
-      key: "about",
-      label: (
-        <a
-          to="#about"
-          onClick={closeMenu}
-          style={{ color: "var(--text-color)", textDecoration: "none" }}
-        >
-          About me
-        </a>
-      ),
-    },
-    {
-      key: "project",
-      label: (
-        <a
-          to="#project"
-          onClick={closeMenu}
-          style={{ color: "var(--text-color)", textDecoration: "none" }}
-        >
-          Project
-        </a>
-      ),
-    },
-    {
-      key: "contact",
-      label: (
-        <a
-          to="#contact"
-          onClick={closeMenu}
-          style={{ color: "var(--text-color)", textDecoration: "none" }}
-        >
-          Contact
-        </a>
-      ),
-    },
-    {
-      key: "resume",
-      label: (
-        <a
-          href={Resume}
-          download
-          style={{
-            color: "var(--text-color)",
-            textDecoration: "none",
-          }}
-        >
-          Resume
-        </a>
-      ),
-    },
-  ];
-
   // const menuItems = [
   //   {
   //     key: "home",
   //     label: (
-  //       <Link
-  //         to="home" // ID of the section
-  //         smooth={true}
-  //         offset={-50} // Adjust for any header or padding
-  //         duration={500}
-  //         onClick={closeMenu}
-  //         style={{ color: "var(--text-color)" }}
-  //       >
-  //         Home
-  //       </Link>
+  //       <NavHashLink smooth to="#home">
+  //         <a
+  //           onClick={closeMenu}
+  //           style={{ color: "var(--text-color)", textDecoration: "none" }}
+  //         >
+  //           Home
+  //         </a>
+  //       </NavHashLink>
   //     ),
   //   },
   //   {
   //     key: "about",
   //     label: (
-  //       <Link
-  //         to="about" // ID of the section
-  //         smooth={true}
-  //         offset={-50}
-  //         duration={500}
-  //         onClick={closeMenu}
-  //         style={{ color: "var(--text-color)" }}
-  //       >
-  //         About me
-  //       </Link>
+  //       <NavHashLink smooth to="#about">
+  //         <a
+  //           onClick={closeMenu}
+  //           style={{ color: "var(--text-color)", textDecoration: "none" }}
+  //         >
+  //           About me
+  //         </a>
+  //       </NavHashLink>
   //     ),
   //   },
   //   {
   //     key: "project",
   //     label: (
-  //       <Link
-  //         to="project"
-  //         smooth={true}
-  //         offset={-50}
-  //         duration={500}
-  //         onClick={closeMenu}
-  //         style={{ color: "var(--text-color)" }}
-  //       >
-  //         Project
-  //       </Link>
+  //       <NavHashLink smooth to="#projects">
+  //         <a
+  //           onClick={closeMenu}
+  //           style={{ color: "var(--text-color)", textDecoration: "none" }}
+  //         >
+  //           Project
+  //         </a>
+  //       </NavHashLink>
   //     ),
   //   },
   //   {
   //     key: "contact",
   //     label: (
-  //       <Link
-  //         to="contact"
-  //         smooth={true}
-  //         offset={-50}
-  //         duration={500}
-  //         onClick={closeMenu}
-  //         style={{ color: "var(--text-color)" }}
-  //       >
-  //         Contact
-  //       </Link>
+  //       <NavHashLink smooth to="#contact">
+  //         <a
+  //           onClick={closeMenu}
+  //           style={{ color: "var(--text-color)", textDecoration: "none" }}
+  //         >
+  //           Contact
+  //         </a>
+  //       </NavHashLink>
   //     ),
   //   },
   //   {
   //     key: "resume",
   //     label: (
-  //       <a href={Resume} download>
+  //       <a
+  //         href={Resume}
+  //         download
+  //         style={{
+  //           color: "var(--text-color)",
+  //           textDecoration: "none",
+  //         }}
+  //       >
   //         Resume
   //       </a>
   //     ),
   //   },
   // ];
 
+  const menuItems = [
+    {
+      key: "home",
+      label: (
+        <Link
+          to="home" // ID of the section
+          smooth={true}
+          offset={-50} // Adjust for any header or padding
+          duration={1000}
+          onClick={closeMenu}
+          style={{ color: "var(--text-color)" }}
+        >
+          Home
+        </Link>
+      ),
+    },
+    {
+      key: "about",
+      label: (
+        <Link
+          to="about" // ID of the section
+          smooth={true}
+          offset={-50}
+          duration={1000}
+          onClick={closeMenu}
+          style={{ color: "var(--text-color)" }}
+        >
+          About
+        </Link>
+      ),
+    },
+    {
+      key: "projects",
+      label: (
+        <Link
+          to="projects"
+          smooth={true}
+          offset={-50}
+          duration={1000}
+          onClick={closeMenu}
+          style={{ color: "var(--text-color)" }}
+        >
+          Projects
+        </Link>
+      ),
+    },
+    {
+      key: "contact",
+      label: (
+        <Link
+          to="contact"
+          smooth={true}
+          offset={-50}
+          duration={1000}
+          onClick={closeMenu}
+          style={{ color: "var(--text-color)" }}
+        >
+          Contact
+        </Link>
+      ),
+    },
+    {
+      key: "resume",
+      label: (
+        <a href={Resume} download style={{ color: "var(--text-color)" }}>
+          Resume
+        </a>
+      ),
+    },
+  ];
+
   return (
-    <Router>
+    <BrowserRouter>
       <div
         style={{
           position: "fixed",
@@ -179,13 +184,13 @@ const HeaderView = () => {
       >
         <Row justify="space-between" align="middle" className="container">
           <Col>
-            <NavLink exact to="home">
+            <NavLink to="home">
               <span style={{ fontSize: "1.6rem", color: "var(--text-color)" }}>
                 {"Umar Amjad"}
               </span>
             </NavLink>
           </Col>
-          <Col>
+          <Col span={12}>
             <Row
               justify="end"
               align="middle"
@@ -198,7 +203,7 @@ const HeaderView = () => {
                     style={{ backgroundColor: "transparent", border: "none" }}
                     mode="horizontal"
                     items={menuItems}
-                    overflowedItem={null}
+                    overfloweditem={null}
                   />
                 </Col>
               )}
@@ -259,16 +264,10 @@ const HeaderView = () => {
           />
         </Drawer>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
-const styles = {
-  menuLink: {
-    color: "var(--text-color)",
-    textDecoration: "none",
-  },
-};
 export default HeaderView;
 
 // import { useState, useEffect } from "react";

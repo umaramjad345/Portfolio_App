@@ -13,7 +13,7 @@ const Contact = () => {
       id="contact"
       className="container"
       style={{
-        marginTop: "40px",
+        marginTop: "8rem",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

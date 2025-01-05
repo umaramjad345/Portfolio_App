@@ -13,31 +13,57 @@ const Footer = () => {
   return (
     <div
       style={{
-        marginTop: "8rem",
-        padding: "3rem 15rem",
+        width: "100vw",
+        marginTop: "6rem",
+        padding: "2rem 0rem",
         backgroundColor: "#2b2b2b",
       }}
     >
       <Row justify="space-between" align="middle" className="container">
-        {/* Logo Section */}
-        {/* <Col>
-          <a
-            href="https://vinayaksingh.in"
-            style={{ fontSize: "2.8rem", color: "#fff", fontWeight: "bold" }}
-          >
-            <span>www.vinayak</span>
-            <span>singh.in</span>
-          </a>
-        </Col> */}
+        <Col xs={24} sm={12} md={8}>
+          <Row justify="start" align="middle">
+            <Col
+              style={{
+                color: "var(--text-color)",
+                fontWeight: "500",
+              }}
+            >
+              &copy; {new Date().getFullYear()}
+            </Col>
+            <Col>
+              <a
+                href="https://www.linkedin.com/in/muhammad-umar-amjad/"
+                target="__blank"
+                style={{
+                  color: "var(--text-color)",
+                  fontWeight: "500",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  marginLeft: "0.25rem",
+                  transition: "color 0.5s, text-decoration 0.5s",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.color = "#4CAF50";
+                  e.target.style.textDecoration = "underline";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.color = "var(--text-color)";
+                  e.target.style.textDecoration = "none";
+                }}
+              >
+                UMAR AMJAD
+              </a>
+            </Col>
+          </Row>
+        </Col>
 
-        {/* Message Section */}
-        <Col>
-          <Row>
+        <Col xs={24} sm={12} md={8}>
+          <Row justify="start" align="middle">
             <Col>
               <Text
                 style={{
                   color: "#fff",
-                  fontSize: "1.5rem",
+                  fontSize: "1.125rem",
                   letterSpacing: "0.2rem",
                 }}
               >
@@ -57,66 +83,48 @@ const Footer = () => {
           </Row>
         </Col>
 
-        {/* Social Media Links */}
-        <Col>
-          <Col>
-            <a
-              href="www.linkedin.com/in/muhammad-umar-amjad"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={linkedin}
-                alt="Linkedin"
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </a>
-          </Col>
-          <Col>
-            <a
-              href="https://github.com/umaramjad345"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={githubIcon}
-                alt="GitHub"
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </a>
-          </Col>
-          <Col>
-            <a
-              href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={whatsapp}
-                alt="Whatsapp"
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </a>
-          </Col>
-
-          {/* <a href="https://t.me/CodeVinayak" target="_blank" rel="noreferrer">
-              <img
-                src={telegram}
-                alt="Telegram"
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </a> */}
-          {/* <a
-              href="https://www.instagram.com/vinayaksingh.in"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={instagramIcon}
-                alt="Instagram"
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </a> */}
+        <Col xs={24} sm={12} md={8}>
+          <Row justify="end" align="middle">
+            <Col>
+              <a
+                href="www.linkedin.com/in/muhammad-umar-amjad"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={linkedin}
+                  alt="Linkedin"
+                  style={{ width: "3rem", height: "3rem" }}
+                />
+              </a>
+            </Col>
+            <Col>
+              <a
+                href="https://github.com/umaramjad345"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={githubIcon}
+                  alt="GitHub"
+                  style={{ width: "3rem", height: "3rem" }}
+                />
+              </a>
+            </Col>
+            <Col>
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={whatsapp}
+                  alt="Whatsapp"
+                  style={{ width: "3rem", height: "3rem" }}
+                />
+              </a>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>

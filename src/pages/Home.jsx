@@ -153,7 +153,7 @@ const Home = () => {
         },
         image: [
           {
-            src: boostrapIcon,
+            src: htmlIcon,
             width: 20,
             height: 20,
           },
@@ -163,17 +163,7 @@ const Home = () => {
             height: 20,
           },
           {
-            src: htmlIcon,
-            width: 20,
-            height: 20,
-          },
-          {
             src: jsIcon,
-            width: 20,
-            height: 20,
-          },
-          {
-            src: nodeIcon,
             width: 20,
             height: 20,
           },
@@ -193,7 +183,12 @@ const Home = () => {
             height: 20,
           },
           {
-            src: vueIcon,
+            src: nodeIcon,
+            width: 20,
+            height: 20,
+          },
+          {
+            src: boostrapIcon,
             width: 20,
             height: 20,
           },
@@ -249,7 +244,7 @@ const Home = () => {
       <Hero />
       <About />
       <Projects />
-      <Skills/>
+      <Skills />
       <Contact />
     </div>
   );

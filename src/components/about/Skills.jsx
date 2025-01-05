@@ -30,6 +30,7 @@ const Skills = () => {
     <Space size={16} wrap>
       {skillIcons.map((icon, index) => (
         <Image
+          key={index}
           width={50}
           src={icon}
           alt={icon.split("/").pop()?.split(".")[0]}

@@ -15,6 +15,7 @@ const { Title, Paragraph } = Typography;
 const Hero = () => {
   return (
     <div
+    id="home"
       className="container"
       style={{
         marginTop: "12rem",
