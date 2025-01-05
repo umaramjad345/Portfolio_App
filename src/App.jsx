@@ -1,17 +1,15 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { SnackbarProvider } from "notistack";
-import "./App.css";
-import Home from "./pages/Home";
+import { RouterProvider } from "react-router-dom";
+import MainRoutes from "./routes/MainRoutes";
 import HeaderView from "./views/HeaderView";
 import Footer from "./views/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import "./App.css";
 
 const App = () => {
   return (
     <div>
       <HeaderView />
-      <SnackbarProvider maxSnack={3}>
-        <Home />
-      </SnackbarProvider>
+      <RouterProvider router={MainRoutes} />
       <Footer />
     </div>
   );

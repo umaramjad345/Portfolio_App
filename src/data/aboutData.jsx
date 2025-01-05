@@ -2,12 +2,12 @@ const aboutData = [
   {
     id: 1,
     content:
-      "I am a Self-Taught Full Stack Web Developer with hands-on experience in both frontend and backend technologies. I am passionate about creating innovative, scalable web solutions that solve real-world problems and provide seamless user experiences.",
+      "A Self-Taught Full Stack Web Developer with hands-on experience in both frontend and backend technologies. I am passionate about creating innovative, scalable web solutions that solve real-world problems and provide seamless user experiences.",
   },
   {
     id: 2,
     content:
-      "I specialize in React.js, Next.js, Node.js, Nest.js, and ASP.NET Core for building modern web applications. My skill set includes crafting intuitive user interfaces and architecting efficient backend systems using MongoDB, SQL Server, and Express.js.",
+      "I specialize in React.js, Next.js, Node.js, Nest.js, MongoDB, SQL Server and ASP.NET Core for building modern web applications. My skill set includes crafting intuitive user interfaces and architecting efficient backend.",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const aboutData = [
   {
     id: 5,
     content:
-      "Beyond development, I’m passionate about exploring mobile app development, artificial intelligence (AI), and cloud computing. These areas fuel my curiosity for learning new technologies.",
+      "Beyond development, I’m passionate about exploring artificial intelligence (AI), and cloud computing. These areas fuel my curiosity for learning new technologies.",
   },
   {
     id: 6,

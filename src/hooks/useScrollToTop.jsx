@@ -1,6 +1,3 @@
-// NOTE: This scroll to top is the actual working scroll to to when user clicks on the circle arrow that appears when use scrolls down.
-// The other `ScrollToTop` component in components folder is for the default react scroll to top behavior on route visit.
-
 import { useState, useEffect } from "react";
 import { FiChevronUp } from "react-icons/fi";
 
@@ -31,14 +28,55 @@ const useScrollToTop = () => {
 
   window.addEventListener("scroll", scrollToTop);
 
+  const scrollToTopBtnStyle = {
+    position: "fixed",
+    width: "45px",
+    height: "45px",
+    display: showScroll ? "flex" : "none",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: "999",
+    borderRadius: "10px",
+    right: "50px",
+    bottom: "50px",
+    padding: "10px",
+    background: "rgba(240, 248, 255, 0.3)",
+    color: "rgb(2, 2, 54)",
+    cursor: "pointer",
+    animation: "fadeIn 0.3s",
+    transition: "opacity 0.4s",
+    opacity: "0.9",
+  };
+
+  const scrollToTopBtnHoverStyle = {
+    background: "rgba(240, 248, 255, 0.6)",
+  };
+
+  const fadeInKeyframes = `
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  `;
+
   return (
     <>
+      <style>{fadeInKeyframes}</style>
       <FiChevronUp
-        className="scrollToTop"
+        className="scrollToTopBtn"
         onClick={backToTop}
-        style={{
-          display: showScroll ? "flex" : "none",
-        }}
+        style={scrollToTopBtnStyle}
+        onMouseOver={(e) =>
+          (e.currentTarget.style.background =
+            scrollToTopBtnHoverStyle.background)
+        }
+        onMouseOut={(e) =>
+          (e.currentTarget.style.background = "rgba(240, 248, 255, 0.3)")
+        }
       />
     </>
   );

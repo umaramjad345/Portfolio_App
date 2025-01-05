@@ -14,23 +14,6 @@ import {
 } from "react-icons/di";
 import { SiFirebase, SiNextdotjs } from "react-icons/si";
 
-// const skillIcons = [
-//   { icon: <FaHtml5 />, style: "shadow-orange-500" },
-//   { icon: <FaCss3Alt />, style: "shadow-blue-500" },
-//   { icon: <DiJavascript1 />, style: "shadow-yellow-500" },
-//   { icon: <DiReact />, style: "shadow-blue-600" },
-//   { icon: <SiNextdotjs />, style: "shadow-white" },
-//   { icon: <DiNodejs />, style: "shadow-green-400" },
-//   { icon: <DiMongodb />, style: "shadow-green-500" },
-//   { icon: <DiPython />, style: "shadow-orange-500" },
-//   { icon: <DiGit />, style: "shadow-gray-400" },
-//   { icon: <SiFirebase />, style: "shadow-yellow-500" },
-// {
-//   src: graphql,
-//   style: "shadow-pink-400",
-// },
-// ];
-
 const skillIcons = [
   {
     icon: <FaHtml5 />,
@@ -91,7 +74,7 @@ const Skills = () => {
         <Row>
           <Col xs={24} sm={12} md={8} lg={6}>
             <Title level={2} style={{ color: "var(--text-color)" }}>
-              Skills
+              My Skills
             </Title>
           </Col>
         </Row>
@@ -136,5 +119,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-// slick-slider slick-initialized

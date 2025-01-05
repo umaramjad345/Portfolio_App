@@ -30,7 +30,6 @@ const Projects = () => {
     //     markers: true,
     //   },
     // });
-
     // gsap.from(".project-card", {
     //   x: 200,
     //   opacity: 0,
@@ -79,7 +78,7 @@ const Projects = () => {
       <Row
         id="projects"
         className="projects-section"
-        gutter={[16, 16]}
+        gutter={[24, 24]}
         justify="start"
         style={{ display: "flex", width: "100%" }}
       >

@@ -1,4 +1,3 @@
-// // Main.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -19,6 +18,8 @@ import typescriptIcon from "../assets/typescript-icon.svg";
 import vueIcon from "../assets/vue-icon.svg";
 import boostrapIcon from "../assets/bootstrap-icon.svg";
 import Skills from "../views/Skills";
+
+import UseScrollToTop from "../hooks/useScrollToTop";
 
 const Home = () => {
   const particlesInit = async (main) => {
@@ -234,7 +235,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative z-0 overflow-x-hidden w-full">
+    <div>
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -246,6 +247,7 @@ const Home = () => {
       <Projects />
       <Skills />
       <Contact />
+      <UseScrollToTop />
     </div>
   );
 };

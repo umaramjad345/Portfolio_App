@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const About = () => {
   return (
-    <div  
+    <div
       id="about"
       className="container"
       style={{
@@ -28,7 +28,7 @@ const About = () => {
         style={{ width: "100%", color: "var(--text-color)" }}
       >
         <Col xs={24} md={12}>
-        <AboutBio aboutData={aboutData} />
+          <AboutBio aboutData={aboutData} />
           <Title
             level={3}
             // style={{ color: "#4CAF50" }}

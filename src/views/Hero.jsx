@@ -15,7 +15,7 @@ const { Title, Paragraph } = Typography;
 const Hero = () => {
   return (
     <div
-    id="home"
+      id="home"
       className="container"
       style={{
         marginTop: "12rem",
@@ -30,7 +30,10 @@ const Hero = () => {
         gutter={32}
         justify="space-between"
         align="middle"
-        style={{ width: "100%", color: "var(--text-color)" }}
+        style={{
+          width: "100%",
+          color: "var(--text-color)",
+        }}
       >
         <Col span={12} xs={24} md={12}>
           <Row>
@@ -88,21 +91,19 @@ const Hero = () => {
           </Row>
           <Row justify="start">
             <Col>
-              <BrowserRouter>
-                <NavHashLink smooth to="#contact">
-                  <Button
-                    type="primary"
-                    size="large"
-                    style={{
-                      padding: "1.4rem 6rem",
-                      marginTop: "2rem",
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    Contact
-                  </Button>
-                </NavHashLink>
-              </BrowserRouter>
+              <NavHashLink smooth to="#contact">
+                <Button
+                  type="primary"
+                  size="large"
+                  style={{
+                    padding: "1.4rem 6rem",
+                    marginTop: "2rem",
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  Contact
+                </Button>
+              </NavHashLink>
             </Col>
           </Row>
           <Row justify="start" style={{ marginTop: "30px" }}>

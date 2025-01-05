@@ -29,7 +29,6 @@ body {
   }
 }
 
-
 .scrollToTop {
   position: fixed;
   width: 45px;
@@ -54,7 +53,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;  
+  width: 12px;
   padding: 20px;
   border-radius: 10px;
   background: #f8f8f8;
@@ -130,7 +129,7 @@ body {
   }
 }
 
-.ant-tabs-nav .ant-tabs-nav-wrap  .ant-tabs-nav-wrap::after {
+.ant-tabs-nav .ant-tabs-nav-wrap .ant-tabs-nav-wrap::after {
   border-bottom: none !important;
 }
 
