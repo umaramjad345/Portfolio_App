@@ -12,8 +12,8 @@ import Hello from "../assets/Hello.gif";
 import telegram from "../assets/telegram.svg";
 import Resume from "../assets/Resume.pdf";
 
-// const phoneNumber = "+923037515829";
-const phoneNumber = "+923467651015";
+const phoneNumber = "+923037515829";
+// const phoneNumber = "+923467651015";
 const defaultMessage = "Hello Umar";
 const whatsappUrl = `https://api.whatsapp.com/send/?phone=${encodeURIComponent(
   phoneNumber
